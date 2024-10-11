@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+
+<script>
+
+	function pulaLinha() {
+
+		document.write("<br><br>");
+
+	}
+
+	function mostra(frase) {
+
+		document.write(frase);
+		pulaLinha();
+	}
+
+	function sorteio(n){
+
+		return Math.round(Math.random()* n);
+
+	}
+
+	var n = parseInt(prompt("Vamos brincar de adivinhe o numero ? Quer tentar de 0 a quanto?"));
+
+	var numeroPensado = sorteio(n);
+
+	var tentativas = 1;
+
+	while(tentativas <=3){
+
+		var chute = parseInt(prompt("Fale um numero de 0 a " +n+", que eu vou falar se você acertou:"));
+
+		if(chute == numeroPensado){
+
+			mostra("Você acertou!");
+			mostra("Eu tambem pesei no número "+ numeroPensado +"!!!");
+			break;
+
+			} else {
+
+				mostra("Você errou!");
+
+				if (chute > numeroPensado) {
+
+					mostra("Seu chute, foi maior que o numero que eu pesei!");
+
+					} else {
+
+					mostra("Seu chute, foi menor que o numero que eu pesei!");
+
+}
+
+}
+	tentativas++;
+	mostra("Tente novamente");
+
+}
+
+</script>
